@@ -1,12 +1,19 @@
-function logName(firstName) {
-  console.log(`Hello, I'm ${firstName}, 26 years old, and I love JavaScript.`);
+function logAge(myAge) {
+  alert(`I am ${myAge} years old`);
 }
-const firstName = prompt("What is your first name?");
-console.log(logName(firstName));
 
-function makeJuice(ingredient1, ingredient2) {
-  console.log(`Juice made with ${ingredient1} and ${ingredient2}`);
+// Function declaration
+function calAge1(birthYear) {
+  const currentYear = new Date().getFullYear();
+  return currentYear - birthYear;
 }
-const ingredient1 = prompt("What is the first ingredient?");
-const ingredient2 = prompt("What is the second ingredient?");
-console.log(makeJuice(ingredient1, ingredient2));
+const myAge = calAge1(1998);
+logAge(myAge);
+
+// Function expression
+const calAge2 = function (birthYear) {
+  const currentYear = new Date().getFullYear();
+  return currentYear - birthYear;
+};
+const myAge2 = calAge2(1998);
+logAge(myAge2);
