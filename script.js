@@ -1,19 +1,15 @@
-function logAge(myAge) {
-  alert(`I am ${myAge} years old`);
-}
-
-// Function declaration
-function calAge1(birthYear) {
-  const currentYear = new Date().getFullYear();
-  return currentYear - birthYear;
-}
-const myAge = calAge1(1998);
-logAge(myAge);
-
-// Function expression
-const calAge2 = function (birthYear) {
+// Arrow Function
+const calAge = (birthYear) => {
   const currentYear = new Date().getFullYear();
   return currentYear - birthYear;
 };
-const myAge2 = calAge2(1998);
-logAge(myAge2);
+console.log(calAge(1998));
+
+const calAge2 = (birthYear) => new Date().getFullYear() - birthYear;
+console.log(calAge2(1998));
+
+const calcAge3 = (birthYear, FirstName) => {
+  const age = new Date().getFullYear() - birthYear;
+  return `${FirstName} is ${age} years old`;
+};
+console.log(calcAge3(1998, "Ahmed"));
