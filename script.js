@@ -1,15 +1,13 @@
-// Arrow Function
-const calAge = (birthYear) => {
-  const currentYear = new Date().getFullYear();
-  return currentYear - birthYear;
-};
-console.log(calAge(1998));
+// Functions calling other functions
+function fruitPieces(fruit) {
+  return fruit * 3;
+}
 
-const calAge2 = (birthYear) => new Date().getFullYear() - birthYear;
-console.log(calAge2(1998));
+function fruitJuice(apples, oranges) {
+  const applePieces = fruitPieces(apples);
+  const orangePieces = fruitPieces(oranges);
 
-const calcAge3 = (birthYear, FirstName) => {
-  const age = new Date().getFullYear() - birthYear;
-  return `${FirstName} is ${age} years old`;
-};
-console.log(calcAge3(1998, "Ahmed"));
+  const juice = `Juice with ${applePieces} apple pieces and ${orangePieces} orange pieces.`;
+  return juice;
+}
+console.log(fruitJuice(2, 3));
